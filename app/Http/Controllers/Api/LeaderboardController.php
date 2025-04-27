@@ -9,6 +9,7 @@ use App\Models\Leaderboard;
 class LeaderboardController extends Controller
 {
     // Add or Update leaderboard score
+    // POST karena ada request di param
     public function submitScore(Request $request)
     {
         #validasi dulu tipenya
