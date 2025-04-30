@@ -38,11 +38,8 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
-    protected function casts(): array
-    {
-        return [
-            'gamedata' => 'array',
-            'achievements' => 'array',
-        ];
-    }
+    protected $casts = [
+        'gamedata' => 'array',
+        'achievements' => 'array',
+    ];
 }

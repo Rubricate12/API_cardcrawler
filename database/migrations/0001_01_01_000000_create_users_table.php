@@ -16,7 +16,7 @@ return new class extends Migration
                 $table->id();
                 $table->string('username')->unique();
                 $table->string('pass');
-                $table->json('gamedata');
+                $table->json(column: 'gamedata');
                 $table->json('achievements');
                 $table->timestamps();
             });
