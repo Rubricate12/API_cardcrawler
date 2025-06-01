@@ -10,8 +10,8 @@ Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
 
 // endpoint route utk tabel leaderboard
-Route::post('/submit-score', [LeaderboardController::class, 'submitScore']);
-Route::get('/top-scores', [LeaderboardController::class, 'topScores']);
+Route::post('/leaderboard/sync', [LeaderboardController::class, 'syncLeaderboard']);
+Route::get('/leaderboard', [LeaderboardController::class, 'showLeaderboard']);
 
 //endpoint untuk achievement
 Route::post('/achievements',[AchievementController::class,'index']);

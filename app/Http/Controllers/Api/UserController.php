@@ -14,7 +14,7 @@ class UserController extends Controller
     {
         #validasi user dan pass
         $request->validate([
-            'username' => 'required|unique:users',
+            'username' => 'required|string|max:30|unique:users',
             'pass' => 'required|min:4',
         ], [
             'username.required' => 'The username is required.',
@@ -26,7 +26,6 @@ class UserController extends Controller
         $user = User::create([
             'username' => $request->username,
             'pass' => Hash::make($request->pass),
-            'gamedata' => json_encode([]),
             'achievements' => json_encode([]),
         ]);
         unset($user['pass']);
@@ -42,7 +41,7 @@ class UserController extends Controller
     {
         #validasi
         $request->validate([
-            'username' => 'required',
+            'username' => 'required|string|max:30',
             'pass' => 'required',
         ]);
         #cek isi dari kolom username pertama yang muncul dari tabel

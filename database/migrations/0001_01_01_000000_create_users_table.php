@@ -16,7 +16,6 @@ return new class extends Migration
                 $table->id();
                 $table->string('username')->unique();
                 $table->string('pass');
-                $table->json(column: 'gamedata');
                 $table->json('achievements');
                 $table->timestamps();
             });
@@ -25,7 +24,7 @@ return new class extends Migration
             Schema::create('leaderboards', function (Blueprint $table) {
                 $table->id();
                 $table->string('username');
-                $table->string('score');
+                $table->integer('score');
                 $table->timestamps();
             });
         }
@@ -37,6 +36,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
+        Schema::dropIfExists('leaderboards');
     }
 };

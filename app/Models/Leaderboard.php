@@ -13,9 +13,4 @@ class Leaderboard extends Model
         'username',
         'score',
     ];
-    #username ga increment
-    public $incrementing = false;
-    #username karena pasti unique
-    protected $primaryKey = 'username';
-    protected $keyType = 'string';
 }
