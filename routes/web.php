@@ -6,4 +6,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('api')->group(base_path('routes/api.php'));
+// Route::prefix('api')->group(base_path('routes/api.php'));

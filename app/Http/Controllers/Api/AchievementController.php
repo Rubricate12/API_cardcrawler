@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Log;
 
 class AchievementController extends Controller
 {
@@ -34,8 +36,13 @@ class AchievementController extends Controller
         }
     }
 
-    public function unlock(Request $request)
+    public function update(Request $request)
     {
+        Log::info('ENTERED AchievementController@update method at ' . now()); // <-- ADD THIS LINE
+
+        $middlewares = Route::current()->gatherMiddleware();
+        \Illuminate\Support\Facades\Log::debug('Middleware for /api/achievements/update:', $middlewares);
+   
         $request->validate([
             'username' => 'required|string',
             'achievement_id' => 'required|integer'
@@ -52,6 +59,6 @@ class AchievementController extends Controller
             $user->save();
         }
 
-        return response()->json(['message' => 'Achievement unlocked successfully.'], 200);
+        return response()->json(['message' => 'Achievement updated successfully.'], 200);
     }
 }

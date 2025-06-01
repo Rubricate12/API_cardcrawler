@@ -15,4 +15,4 @@ Route::get('/top-scores', [LeaderboardController::class, 'topScores']);
 
 //endpoint untuk achievement
 Route::post('/achievements',[AchievementController::class,'index']);
-Route::post('/achievements/unlock',[AchievementController::class,'unlock']);
+Route::post('/achievements/update',[AchievementController::class,'update']);
