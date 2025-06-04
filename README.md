@@ -39,7 +39,7 @@ Follow these steps to get the API_cardcrawler backend up and running:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/Rubricate12/API_cardcrawler.git](https://github.com/Rubricate12/API_cardcrawler.git)
+    git clone https://github.com/Rubricate12/API_cardcrawler.git
     cd API_cardcrawler
     ```
 
